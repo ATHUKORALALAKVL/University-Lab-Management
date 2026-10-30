@@ -1,0 +1,926 @@
+
+/* =====================================================
+   UNIVERSITY LAB MANAGEMENT SYSTEM
+   FLUID RESPONSIVE STYLES
+===================================================== */
+
+/* GLOBAL BOX SIZING */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6fa;
+  color: #1a2940;
+}
+
+#root {
+  min-height: 100vh;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* GLOBAL TEXT */
+
+h1 {
+  color: #142d50;
+  font-size: clamp(26px, 3vw, 36px);
+}
+
+h2 {
+  color: #b38a35;
+  font-size: clamp(22px, 2.5vw, 26px);
+}
+
+h3 {
+  color: #344b68;
+  font-size: clamp(18px, 2vw, 20px);
+}
+
+p {
+  color: #5b6778;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+/* =====================================================
+   NAVIGATION BAR
+===================================================== */
+
+.navbar {
+  background-color: #142d50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 20px);
+  padding:
+    clamp(12px, 2vw, 16px)
+    clamp(16px, 5vw, 70px);
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* UNIVERSITY LOGO */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1vw, 12px);
+  min-width: 0;
+}
+
+.university-logo {
+  width: clamp(50px, 6vw, 70px);
+  height: auto;
+  max-height: 95px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.logo h2,
+.logo-text h2 {
+  color: #ffffff;
+  font-size: clamp(15px, 1.7vw, 20px);
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.logo-text p {
+  color: #d5b76f;
+  font-size: clamp(10px, 1vw, 12px);
+  line-height: 1.4;
+  margin: 4px 0 0;
+}
+
+/* NAVIGATION LINKS */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(8px, 1.5vw, 22px);
+  min-width: 0;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: clamp(13px, 1vw, 14px);
+  font-weight: 500;
+  padding: 8px 3px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #d5b76f;
+}
+
+/* REGISTER BUTTON */
+
+.register-btn {
+  background-color: #d5b76f;
+  color: #142d50 !important;
+  padding: 10px 18px !important;
+  border-radius: 6px;
+  font-weight: bold !important;
+  text-align: center;
+}
+
+.register-btn:hover {
+  background-color: #e8cd8b;
+}
+
+/* =====================================================
+   MAIN CONTENT
+===================================================== */
+
+main {
+  width: 100%;
+  min-width: 0;
+  padding:
+    clamp(12px, 2vw, 20px)
+    clamp(12px, 5vw, 70px);
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: calc(100vh - 120px);
+}
+
+/* =====================================================
+   HOMEPAGE HERO
+===================================================== */
+
+.hero {
+  background: linear-gradient(135deg, #142d50, #254c78);
+  color: #ffffff;
+  border-radius: 12px;
+
+  padding:
+    clamp(30px, 5vw, 65px)
+    clamp(18px, 4vw, 50px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  min-width: 0;
+}
+
+.hero-label {
+  color: #d5b76f;
+  font-size: clamp(10px, 1vw, 12px);
+  font-weight: bold;
+  letter-spacing: clamp(1px, 0.15vw, 2px);
+  margin: 0 0 12px;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.25;
+  margin: 12px 0;
+  overflow-wrap: break-word;
+}
+
+.hero-description {
+  color: #e0e7f0;
+  font-size: clamp(14px, 1.3vw, 16px);
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(10px, 1.5vw, 15px);
+  margin-top: 20px;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 44px;
+  padding: 11px 20px;
+
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+
+  transition: background-color 0.2s ease;
+}
+
+.primary-btn {
+  background-color: #d5b76f;
+  color: #142d50;
+  border: none;
+}
+
+.secondary-btn {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+.primary-btn:hover {
+  background-color: #e9cd88;
+}
+
+.secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =====================================================
+   LABORATORIES SECTION
+===================================================== */
+
+.laboratories-section {
+  width: 100%;
+  min-width: 0;
+
+  padding:
+    clamp(24px, 5vw, 50px)
+    clamp(12px, 6vw, 80px);
+
+  text-align: center;
+  background-color: #f4f6fa;
+}
+
+.laboratories-section h2 {
+  color: #142d50;
+  font-size: clamp(24px, 3vw, 30px);
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.laboratories-section > p {
+  color: #5b6778;
+  font-size: clamp(14px, 1.5vw, 16px);
+  margin-bottom: clamp(20px, 3vw, 35px);
+}
+
+/* AUTOMATIC LABORATORY CARD GRID */
+
+.labs-grid {
+  display: grid;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 280px), 1fr)
+  );
+
+  gap: clamp(14px, 2vw, 22px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* LABORATORY CARD */
+
+.lab-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid #e2e6ed;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease;
+
+  min-width: 0;
+  width: 100%;
+}
+
+.lab-card:hover {
+  transform: translateY(-4px);
+}
+
+.lab-card-header {
+  background-color: #142d50;
+  padding: 14px 20px;
+}
+
+.lab-number {
+  color: #d5b76f;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.lab-card-body {
+  padding: clamp(16px, 2vw, 22px);
+  min-width: 0;
+}
+
+.lab-card-body h3 {
+  color: #142d50;
+  font-size: clamp(17px, 1.5vw, 18px);
+  line-height: 1.4;
+  margin: 0 0 12px;
+  overflow-wrap: anywhere;
+}
+
+.lab-card-body p {
+  color: #5b6778;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* LABORATORY BUTTON */
+
+.lab-details-btn {
+  background-color: #142d50;
+  color: #ffffff;
+  border: none;
+
+  padding: 11px 20px;
+  min-height: 44px;
+
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+
+  transition: background-color 0.2s ease;
+}
+
+.lab-details-btn:hover {
+  background-color: #254c78;
+}
+
+/* CALENDAR CONTAINER */
+
+.laboratories-section > div {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* =====================================================
+   REGISTRATION FORM
+===================================================== */
+
+.register-form {
+  width: calc(100% - 24px);
+  max-width: 520px;
+
+  margin: clamp(20px, 3vw, 28px) auto 50px;
+  padding: clamp(18px, 3vw, 30px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background: #ffffff;
+  border: 1px solid #e0e5ed;
+  border-radius: 12px;
+
+  box-shadow:
+    0 6px 20px rgba(20, 45, 78, 0.08);
+}
+
+.register-form label {
+  margin-top: 8px;
+  color: #173052;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.register-form input,
+.register-form select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+
+  padding: 11px 12px;
+  border: 1px solid #cbd3df;
+  border-radius: 6px;
+
+  background: #ffffff;
+  color: #243247;
+  font: inherit;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  outline: 2px solid #d8b96e;
+  outline-offset: 1px;
+}
+
+.register-form button {
+  width: 100%;
+  min-height: 44px;
+  margin-top: 18px;
+}
+
+#register > h2,
+#register > p {
+  text-align: center;
+}
+
+#register > h2 {
+  margin-top: clamp(24px, 4vw, 42px);
+  color: #173052;
+}
+
+#register > p {
+  color: #607087;
+}
+
+/* =====================================================
+   LOGIN PAGE
+===================================================== */
+
+.login-section {
+  min-height: 65vh;
+
+  padding:
+    clamp(30px, 5vw, 60px)
+    clamp(12px, 3vw, 20px);
+
+  background-color: #f3f5f9;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 0;
+}
+
+.login-section h2 {
+  color: #172f52;
+  font-size: clamp(25px, 3vw, 32px);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.login-section > p {
+  color: #64748b;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  width: 100%;
+  max-width: 420px;
+
+  background: #ffffff;
+
+  padding: clamp(18px, 3vw, 35px);
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-form > div {
+  margin-bottom: 22px;
+}
+
+.login-form label {
+  display: block;
+  font-weight: 600;
+  color: #172f52;
+  margin-bottom: 8px;
+}
+
+.login-form input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+
+  padding: 13px 14px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  font-size: 16px;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #d8b460;
+
+  box-shadow:
+    0 0 0 3px rgba(216, 180, 96, 0.2);
+}
+
+.login-form button {
+  width: 100%;
+  min-height: 44px;
+
+  padding: 14px;
+
+  background-color: #d8b460;
+  color: #172f52;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.login-form button:hover {
+  background-color: #c9a34f;
+}
+
+/* =====================================================
+   STUDENT DASHBOARD
+===================================================== */
+
+.student-dashboard {
+  width: 100%;
+  min-width: 0;
+
+  padding:
+    clamp(20px, 4vw, 40px)
+    clamp(12px, 3vw, 30px);
+
+  text-align: center;
+}
+
+.student-dashboard h2 {
+  color: #172f52;
+}
+
+.dashboard-options {
+  margin-top: 30px;
+
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: clamp(10px, 1.5vw, 15px);
+}
+
+.dashboard-options button {
+  background-color: #172f52;
+  color: #ffffff;
+
+  padding: 12px 20px;
+  min-height: 44px;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.dashboard-options button:hover {
+  background-color: #d8b460;
+  color: #172f52;
+}
+
+/* =====================================================
+   MY BOOKINGS
+===================================================== */
+
+.my-booking-card {
+  background-color: #ffffff;
+
+  border: 1px solid #dddddd;
+  border-radius: 6px;
+
+  padding: clamp(14px, 2vw, 20px);
+  margin: 20px auto;
+
+  width: 100%;
+  max-width: 600px;
+  min-width: 0;
+
+  text-align: left;
+}
+
+.my-booking-card h3 {
+  color: #172f52;
+  margin-bottom: 15px;
+}
+
+.my-booking-card p {
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   FLEXIBLE TABLE SUPPORT
+===================================================== */
+
+/* Tables can be wrapped in a container using
+   className="table-responsive" when needed. */
+
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* =====================================================
+   GENERAL RESPONSIVE SAFETY
+===================================================== */
+
+.hero,
+.hero-content,
+.laboratories-section,
+.lab-card,
+.register-form,
+.login-form,
+.student-dashboard,
+.my-booking-card {
+  min-width: 0;
+}
+
+.hero-content,
+.lab-card-body,
+.my-booking-card {
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   SMALL SCREEN LAYOUT ADJUSTMENT
+   One general breakpoint, not device-specific
+===================================================== */
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .logo {
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-buttons .primary-btn,
+  .hero-buttons .secondary-btn {
+    width: 100%;
+  }
+
+  .dashboard-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-options button {
+    width: 100%;
+  }
+
+  .lab-details-btn {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #d5b76f;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab-card,
+  .lab-details-btn,
+  .primary-btn,
+  .secondary-btn,
+  .nav-links a {
+    transition: none;
+  }
+
+  .lab-card:hover {
+    transform: none;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE OFFICIAL LABORATORY DETAILS
+   Automatically adapts to different screen sizes
+===================================================== */
+
+.official-lab-details {
+  width: 100%;
+  max-width: 1100px;
+  min-width: 0;
+  margin: 20px auto;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+/* Make laboratory pictures fit their containers */
+
+.official-lab-details img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 16px auto;
+  object-fit: contain;
+}
+
+/* Prevent embedded content from overflowing */
+
+.official-lab-details iframe,
+.official-lab-details video {
+  display: block;
+  max-width: 100%;
+  margin: 16px auto;
+}
+
+/* Keep paragraphs and headings readable */
+
+.official-lab-details p,
+.official-lab-details h1,
+.official-lab-details h2,
+.official-lab-details h3 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+/* Make tables scroll instead of breaking mobile layout */
+
+.official-lab-details table {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Avoid overflowing preformatted text */
+
+.official-lab-details pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Responsive spacing for narrow screens */
+
+@media (max-width: 600px) {
+  .official-lab-details {
+    margin: 12px auto;
+  }
+
+  .official-lab-details img {
+    max-height: 350px;
+    margin: 12px auto;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE NAVIGATION IMPROVEMENT
+===================================================== */
+
+/* Mobile and narrow-screen navigation */
+@media (max-width: 600px) {
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    gap: 18px;
+  }
+
+  /* University branding */
+  .navbar .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* Automatically organize navigation into two columns */
+  .navbar .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    width: 100%;
+  }
+
+  /* Navigation links */
+  .navbar .nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+
+    padding: 10px 8px;
+
+    background-color: #25466e;
+    color: #ffffff;
+
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .navbar .nav-links a:hover {
+    background-color: #355a85;
+    color: #ffffff;
+  }
+
+  /* Register button occupies full row */
+  .navbar .nav-links .register-btn {
+    grid-column: 1 / -1;
+
+    background-color: #d5b76f;
+    color: #142d50 !important;
+
+    font-weight: bold;
+  }
+
+  .navbar .nav-links .register-btn:hover {
+    background-color: #e8cd8b;
+    color: #142d50 !important;
+  }
+}
