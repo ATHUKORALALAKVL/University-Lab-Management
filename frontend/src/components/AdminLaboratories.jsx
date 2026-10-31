@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 
-const API_URL = 'http://localhost:5000/api/labs';
+const API_URL = 'https://university-lab-backend.vercel.app/api/labs';
 
 const emptyForm = {
   name: '',

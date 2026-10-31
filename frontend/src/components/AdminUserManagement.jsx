@@ -12,7 +12,7 @@ function AdminUserManagement() {
         const token = sessionStorage.getItem('token');
 
         const response = await fetch(
-          'http://localhost:5000/api/admin/users',
+          'https://university-lab-backend.vercel.app/api/admin/users',
           {
             headers: {
               Authorization: `Bearer ${token}`

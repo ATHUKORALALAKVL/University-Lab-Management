@@ -20,7 +20,7 @@ function LabAvailability() {
     async function fetchLabs() {
       try {
         const response = await fetch(
-          'http://localhost:5000/api/labs',
+          'https://university-lab-backend.vercel.app/api/labs',
           { signal: controller.signal }
         );
 

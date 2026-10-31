@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 
-const API = 'http://localhost:5000/api';
+const API = 'https://university-lab-backend.vercel.app/api';
 
 const UNDERGRADUATE_LAB_NAME = 'Undergraduate Project Lab';
 

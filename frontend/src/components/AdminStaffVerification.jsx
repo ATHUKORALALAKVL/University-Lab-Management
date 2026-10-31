@@ -12,7 +12,7 @@ function AdminStaffVerification() {
         const token = sessionStorage.getItem('token');
 
         const response = await fetch(
-          'http://localhost:5000/api/admin/pending-staff',
+          'https://university-lab-backend.vercel.app/api/admin/pending-staff',
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -50,7 +50,7 @@ function AdminStaffVerification() {
       const token = sessionStorage.getItem('token');
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/approve-staff/${staffId}`,
+        `https://university-lab-backend.vercel.app/api/admin/approve-staff/${staffId}`,
         {
           method: 'PATCH',
           headers: {
@@ -88,7 +88,7 @@ function AdminStaffVerification() {
       const token = sessionStorage.getItem('token');
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/reject-staff/${staffId}`,
+        `https://university-lab-backend.vercel.app/api/admin/reject-staff/${staffId}`,
         {
           method: 'PATCH',
           headers: {

@@ -31,7 +31,7 @@ useEffect(() => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/lab-details/${selectedLab.id}`,
+        `https://university-lab-backend.vercel.app/api/lab-details/${selectedLab.id}`,
         { signal: controller.signal }
       );
 

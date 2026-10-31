@@ -17,8 +17,8 @@ function EquipmentCatalogue() {
 
         const [labsResponse, equipmentResponse] =
           await Promise.all([
-            fetch('http://localhost:5000/api/labs'),
-            fetch('http://localhost:5000/api/equipment')
+            fetch('https://university-lab-backend.vercel.app/api/labs'),
+            fetch('https://university-lab-backend.vercel.app/api/equipment')
           ]);
 
         if (!labsResponse.ok || !equipmentResponse.ok) {

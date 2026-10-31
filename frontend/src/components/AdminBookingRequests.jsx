@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 
-const API = 'http://localhost:5000/api/admin';
+const API = 'https://university-lab-backend.vercel.app/api/admin';
 
 const panelStyle = {
   border: '1px solid #ddd',

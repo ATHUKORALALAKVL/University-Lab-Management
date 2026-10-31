@@ -1,7 +1,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://university-lab-backend.vercel.app';
 
 // ======================================================
 // HELPERS
