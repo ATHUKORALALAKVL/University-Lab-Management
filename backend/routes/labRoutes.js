@@ -10,11 +10,7 @@ const Booking = require('../models/Booking');
 const protect = require('../middleware/authMiddleware');
 const adminOnly = require('../middleware/adminMiddleware');
 
-// ======================================================
-// GET ALL LABORATORIES
-// Accessible to everyone
-// GET /api/labs
-// ======================================================
+
 
 router.get('/', async (req, res) => {
   try {
@@ -33,24 +29,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-// ======================================================
-// GET APPROVED LABORATORY BOOKING SCHEDULE
-// Accessible to everyone
-// GET /api/labs/:id/schedule?month=YYYY-MM
-// ======================================================
-//
-// Only currently approved laboratory bookings appear.
-//
-// Pending, Rejected and Cancelled bookings are excluded.
-//
-// Equipment-only bookings are excluded.
-//
-// When an approved booking is cancelled, its status
-// changes, so it automatically disappears from
-// the calendar without deleting the booking record.
-//
-// Bookings are returned in chronological order.
-// ======================================================
+
 
 router.get('/:id/schedule', async (req, res) => {
   try {
@@ -126,8 +105,7 @@ router.get('/:id/schedule', async (req, res) => {
       })
       .lean();
 
-    // Return date in YYYY-MM-DD format
-    // so the React calendar can compare dates easily.
+    
 
    const schedule = bookings.map((booking) => ({
   _id: booking._id,
@@ -157,11 +135,7 @@ router.get('/:id/schedule', async (req, res) => {
   }
 });
 
-// ======================================================
-// ADD A NEW LABORATORY
-// Admin only
-// POST /api/labs
-// ======================================================
+
 
 router.post(
   '/',
@@ -223,11 +197,8 @@ router.post(
   }
 );
 
-// ======================================================
 // EDIT LABORATORY DETAILS
-// Admin only
-// PUT /api/labs/:id
-// ======================================================
+
 
 router.put(
   '/:id',

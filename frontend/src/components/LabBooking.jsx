@@ -31,15 +31,12 @@ function LabBooking({ user }) {
 
   const token = sessionStorage.getItem('token');
 
-  // ======================================================
   // USER ROLES
-  // ======================================================
 
   const isStaff = user?.role === 'staff';
   const isStudent = user?.role === 'student';
 
-  // Students can book only the Undergraduate Project Lab.
-  // Staff can book all available laboratories.
+  
 
   const availableLabs = labs.filter((lab) => {
     if (!lab.isAvailable) {
@@ -69,9 +66,7 @@ function LabBooking({ user }) {
     Boolean(selectedLabRecord) &&
     !isUndergraduateLab(selectedLabRecord);
 
-  // ======================================================
   // EQUIPMENT FOR SELECTED LABORATORY
-  // ======================================================
 
   const labEquipment = equipment.filter(
     (item) =>
@@ -79,9 +74,7 @@ function LabBooking({ user }) {
       String(selectedLab)
   );
 
-  // ======================================================
   // TIME VALIDATION
-  // ======================================================
 
   const validateBookingTimes = (start, end, restricted) => {
     if (!start || !end) {
@@ -127,9 +120,7 @@ function LabBooking({ user }) {
     );
   }, [startTime, endTime, hasStaffTimeRestriction]);
 
-  // ======================================================
   // LOAD LABORATORIES AND EQUIPMENT
-  // ======================================================
 
   useEffect(() => {
     const loadData = async () => {
@@ -172,9 +163,7 @@ function LabBooking({ user }) {
     loadData();
   }, []);
 
-  // ======================================================
   // SUBMIT BOOKING
-  // ======================================================
 
   const handleBooking = async (e) => {
     e.preventDefault();
@@ -197,9 +186,7 @@ function LabBooking({ user }) {
       return;
     }
 
-    // Independently check the selected lab's restriction
-    // before submitting the request.
-
+    
     const restricted =
       isStaff && !isUndergraduateLab(lab);
 
@@ -281,9 +268,7 @@ function LabBooking({ user }) {
     }
   };
 
-  // ======================================================
   // BOOKING FORM
-  // ======================================================
 
   return (
     <section className="laboratories-section">
@@ -337,9 +322,9 @@ function LabBooking({ user }) {
         </p>
       ) : (
         <form
-          className="login-form"
-          onSubmit={handleBooking}
-        >
+  className="login-form booking-form"
+  onSubmit={handleBooking}
+>
           {/* LABORATORY SELECTION */}
 
           <label htmlFor="booking-lab">

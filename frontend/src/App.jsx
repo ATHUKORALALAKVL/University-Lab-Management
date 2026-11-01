@@ -42,9 +42,9 @@ function App() {
     }
   });
 
-  // =====================================================
+  
   // STAFF VERIFICATION HELPERS
-  // =====================================================
+  
 
   const isStaffPending = (user) => {
     if (!user) return false;
@@ -74,9 +74,9 @@ function App() {
     );
   };
 
-  // =====================================================
+  
   // DASHBOARD NAVIGATION
-  // =====================================================
+  
 
   const goToDashboard = () => {
     if (!loggedInUser) {
@@ -90,9 +90,9 @@ function App() {
     }
   };
 
-  // =====================================================
+  
   // SAFE PAGE NAVIGATION
-  // =====================================================
+  
 
   const navigateTo = (page) => {
     if (page === 'equipment-booking') {
@@ -120,9 +120,9 @@ function App() {
     setCurrentPage(page);
   };
 
-  // =====================================================
+  
   // LOGOUT
-  // =====================================================
+  
 
   const handleLogout = () => {
     sessionStorage.removeItem('token');
@@ -132,9 +132,9 @@ function App() {
     setCurrentPage('home');
   };
 
-  // =====================================================
+  
   // LOGIN SUCCESS
-  // =====================================================
+  
 
   const handleLoginSuccess = (user) => {
     setLoggedInUser(user);
@@ -148,9 +148,9 @@ function App() {
     }
   };
 
-  // =====================================================
+  
   // MAIN APPLICATION
-  // =====================================================
+  
 
   return (
     <div>
@@ -242,9 +242,9 @@ function App() {
         </div>
       </nav>
 
-      {/* =================================================
+      {/* 
           HOMEPAGE
-      ================================================= */}
+       */}
 
       {currentPage === 'home' && (
         <main id="home">
@@ -303,9 +303,9 @@ function App() {
         </main>
       )}
 
-      {/* =================================================
+      {/* 
           PUBLIC LABORATORY PAGES
-      ================================================= */}
+      */}
 
       {currentPage === 'laboratories' && (
         <Laboratories />
@@ -315,25 +315,25 @@ function App() {
         <LabAvailability />
       )}
 
-      {/* =================================================
+      {/* 
           PUBLIC EQUIPMENT CATALOGUE
-      ================================================= */}
+       */}
 
       {currentPage === 'equipment' && (
         <EquipmentCatalogue />
       )}
 
-      {/* =================================================
+      {/* 
           REGISTER
-      ================================================= */}
+      */}
 
       {currentPage === 'register' && (
         <Register />
       )}
 
-      {/* =================================================
+      {/* 
           LOGIN
-      ================================================= */}
+      */}
 
       {currentPage === 'login' && (
         <Login
@@ -341,9 +341,9 @@ function App() {
         />
       )}
 
-      {/* =================================================
+      {/* 
           DASHBOARD
-      ================================================= */}
+       */}
 
       {currentPage === 'dashboard' &&
         loggedInUser &&
@@ -363,27 +363,27 @@ function App() {
           )
         )}
 
-      {/* =================================================
+      {/* 
           MY BOOKINGS
-      ================================================= */}
+      */}
 
       {currentPage === 'my-bookings' &&
         loggedInUser && (
           <MyBookings />
         )}
 
-      {/* =================================================
+      {/* 
           MY PROFILE
-      ================================================= */}
+       */}
 
       {currentPage === 'profile' &&
         loggedInUser && (
           <MyProfile user={loggedInUser} />
         )}
 
-      {/* =================================================
+      {/* 
           STAFF VERIFICATION PAGES
-      ================================================= */}
+      */}
 
       {currentPage === 'staff-pending' &&
         loggedInUser && (
@@ -395,64 +395,63 @@ function App() {
           <StaffRejected />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN STAFF VERIFICATION
-      ================================================= */}
+       */}
 
       {currentPage === 'admin-staff' &&
         loggedInUser?.role === 'admin' && (
           <AdminStaffVerification />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN EQUIPMENT MANAGEMENT
-      ================================================= */}
+       */}
 
       {currentPage === 'admin-equipment' &&
         loggedInUser?.role === 'admin' && (
           <AdminEquipment />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN BOOKING REQUESTS
-      ================================================= */}
+      */}
 
       {currentPage === 'admin-bookings' &&
         loggedInUser?.role === 'admin' && (
           <AdminBookingRequests />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN USER MANAGEMENT
-      ================================================= */}
+      */}
 
       {currentPage === 'admin-users' &&
         loggedInUser?.role === 'admin' && (
           <AdminUserManagement />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN LABORATORY MANAGEMENT
-      ================================================= */}
+      */}
 
       {currentPage === 'admin-labs' &&
         loggedInUser?.role === 'admin' && (
           <AdminLaboratories />
         )}
 
-      {/* =================================================
+      {/* 
           ADMIN REPORTS
-      ================================================= */}
+      */}
 
       {currentPage === 'admin-reports' &&
         loggedInUser?.role === 'admin' && (
           <AdminReports />
         )}
 
-      {/* =================================================
+      {/* 
           LABORATORY BOOKING
-          Existing feature remains unchanged
-      ================================================= */}
+      */}
 
       {currentPage === 'booking' &&
         loggedInUser &&
@@ -461,12 +460,9 @@ function App() {
           <LabBooking user={loggedInUser} />
         )}
 
-      {/* =================================================
-          NEW: STAFF EQUIPMENT-ONLY BOOKING
-          Staff members only
-          Multiple laboratories supported
-          No laboratory space reservation
-      ================================================= */}
+      {/* 
+           STAFF EQUIPMENT-ONLY BOOKING
+         */}
 
       {currentPage === 'equipment-booking' &&
         isVerifiedStaff(loggedInUser) && (

@@ -3,13 +3,8 @@ import { useEffect, useState } from 'react';
 
 const API_URL = 'https://university-lab-backend.vercel.app';
 
-// ======================================================
 // DATE AND TIME HELPERS
-// ======================================================
 
-// Booking dates are stored as calendar dates.
-// Use UTC when extracting the date so the displayed
-// booking date does not shift between timezones.
 const getBookingDateString = (booking) => {
   if (!booking.bookingDate) return null;
 
@@ -24,8 +19,7 @@ const getBookingDateString = (booking) => {
 
 // Convert a booking's Sri Lankan local end time
 // into an absolute timestamp.
-//
-// Sri Lanka uses UTC+05:30.
+
 const getSessionEnd = (booking) => {
   const dateString = getBookingDateString(booking);
 
@@ -71,9 +65,7 @@ const formatBookingDate = (booking) => {
   });
 };
 
-// ======================================================
 // ADMIN REPORTS
-// ======================================================
 
 function AdminReports() {
   const [bookings, setBookings] = useState([]);
@@ -84,9 +76,7 @@ function AdminReports() {
   const [toDate, setToDate] = useState('');
   const [appliedRange, setAppliedRange] = useState(null);
 
-  // ====================================================
   // LOAD ALL BOOKINGS
-  // ====================================================
 
   useEffect(() => {
     const loadReports = async () => {
@@ -132,9 +122,7 @@ function AdminReports() {
     loadReports();
   }, []);
 
-  // ====================================================
   // COMPLETED LABORATORY SESSION LOGIC
-  // ====================================================
 
   const now = new Date();
 
@@ -142,31 +130,20 @@ function AdminReports() {
     .filter((booking) => {
 
       // 1. Only laboratory bookings.
-      //
-      // Older bookings without bookingType
-      // are treated as laboratory bookings.
-      //
-      // Equipment-only bookings are excluded.
+      
 
       if (booking.bookingType === 'equipment') {
         return false;
       }
 
       // 2. Current status must still be Approved.
-      //
-      // Cancelled bookings are excluded regardless
-      // of whether the cancellation was performed
-      // by an admin, student, or staff member.
-      //
-      // This also excludes Pending, Rejected and
-      // Cancellation Requested bookings.
+      
 
       if (booking.status !== 'Approved') {
         return false;
       }
 
       // 3. The booked laboratory session must
-      // have reached its scheduled end time.
 
       const sessionEnd = getSessionEnd(booking);
 
@@ -175,9 +152,7 @@ function AdminReports() {
       }
 
       // 4. Apply optional report date range.
-      //
-      // Filter using the BOOKED SESSION DATE,
-      // not the approval date or cancellation date.
+     
 
       if (appliedRange) {
         const dateString =
@@ -199,9 +174,7 @@ function AdminReports() {
         getSessionEnd(b) - getSessionEnd(a)
     );
 
-  // ====================================================
   // DATE FILTER HANDLERS
-  // ====================================================
 
   const generateReport = () => {
     if (!fromDate || !toDate) {
@@ -345,9 +318,7 @@ function AdminReports() {
         </p>
       ) : (
 
-        // =================================================
         // REPORT TABLE
-        // =================================================
 
         <div style={{ overflowX: 'auto' }}>
           <table
@@ -386,9 +357,7 @@ function AdminReports() {
             <tbody>
               {completedBookings.map((booking) => {
 
-                // Prefer admin-approved quantities.
-                // Fall back to requested quantities
-                // for older booking records.
+                
 
                 const equipmentUsed =
                   booking.approvedEquipment?.length > 0

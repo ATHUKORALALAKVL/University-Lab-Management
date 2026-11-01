@@ -96,9 +96,7 @@ function StaffEquipmentBooking({
     sessionStorage.getItem('token') ||
     localStorage.getItem('token');
 
-  // =====================================================
   // LOAD LABORATORIES AND EQUIPMENT
-  // =====================================================
 
   useEffect(() => {
     let active = true;
@@ -162,9 +160,7 @@ function StaffEquipmentBooking({
     };
   }, []);
 
-  // =====================================================
   // FILTER EQUIPMENT BY LABORATORY
-  // =====================================================
 
   const getLabEquipment = labId =>
     equipment.filter(item =>
@@ -232,9 +228,7 @@ function StaffEquipmentBooking({
     );
   };
 
-  // =====================================================
   // BOOKING SUMMARY
-  // =====================================================
 
   const summary = rows
     .filter(row => row.equipmentId)
@@ -418,9 +412,7 @@ function StaffEquipmentBooking({
     }
   };
 
-  // =====================================================
   // STAFF ACCESS
-  // =====================================================
 
   if (user?.role !== 'staff') {
     return (

@@ -19,13 +19,13 @@ function Register() {
     // Validate telephone number: exactly 10 digits starting with 0
     if (!/^0\d{9}$/.test(telephoneNumber)) {
       setError(
-        'Please enter a valid 10-digit telephone number starting with 0.'
+        'please enter a valid 10-digit telephone number starting with 0.'
       );
       return;
     }
 
     if (password !== confirmPassword) {
-      setError('Passwords do not match.');
+      setError('passwords do not match.');
       return;
     }
 
@@ -56,10 +56,10 @@ function Register() {
       if (response.ok) {
         if (role === 'staff') {
           alert(
-            'Staff registration request submitted! Please wait for laboratory administrator verification.'
+            'staff registration request submitted! Please wait for laboratory administrator verification.'
           );
         } else {
-          alert('Account created successfully! You can now login.');
+          alert('account created successfully! You can now login.');
         }
 
         setRole('student');
@@ -101,7 +101,7 @@ function Register() {
         <label>Full Name</label>
         <input
           type="text"
-          placeholder="Enter your full name"
+          placeholder="enter your full name"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -112,7 +112,7 @@ function Register() {
             <label>University Registration Number</label>
             <input
               type="text"
-              placeholder="EG/2023/XXXX"
+              placeholder="eg/2023/XXXX"
               value={registrationNo}
               onChange={(e) => setRegistrationNo(e.target.value)}
               required
@@ -121,7 +121,7 @@ function Register() {
             <label>Batch</label>
             <input
               type="text"
-              placeholder="Example: 2023"
+              placeholder="example: 2023"
               value={batch}
               onChange={(e) => setBatch(e.target.value)}
               required
@@ -132,7 +132,7 @@ function Register() {
         <label>University Email</label>
         <input
           type="email"
-          placeholder="Enter your university email"
+          placeholder="enter your university email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -159,7 +159,7 @@ function Register() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           minLength={8}
-          placeholder="At least 8 characters"
+          placeholder="at least 8 characters"
           required
         />
 
@@ -169,7 +169,7 @@ function Register() {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           minLength={8}
-          placeholder="Re-enter your password"
+          placeholder="re-enter your password"
           required
         />
 

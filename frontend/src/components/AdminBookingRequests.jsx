@@ -89,9 +89,7 @@ const statusColors = {
   'Cancellation Requested': '#b36b00'
 };
 
-// =====================================================
 // BOOKING TIMESTAMPS
-// =====================================================
 
 function BookingTimestamps({ booking }) {
   const requestedAt = formatDateTime(booking.createdAt);
@@ -128,9 +126,7 @@ function BookingTimestamps({ booking }) {
   );
 }
 
-// =====================================================
 // MAIN COMPONENT
-// =====================================================
 
 function AdminBookingRequests() {
   const [bookings, setBookings] = useState([]);
@@ -160,9 +156,7 @@ function AdminBookingRequests() {
   const [selectedReplacements, setSelectedReplacements] = useState({});
   const [replacementLoading, setReplacementLoading] = useState(null);
 
-  // =====================================================
   // API HELPERS
-  // =====================================================
 
   const getHeaders = (json = false) => ({
     Authorization: `Bearer ${sessionStorage.getItem('token')}`,
@@ -189,9 +183,7 @@ function AdminBookingRequests() {
     return data;
   };
 
-  // =====================================================
   // LOAD BOOKINGS
-  // =====================================================
 
   const loadBookings = async () => {
     try {
@@ -215,9 +207,7 @@ function AdminBookingRequests() {
     loadBookings();
   }, []);
 
-  // =====================================================
   // CLEAR EQUIPMENT SELECTION
-  // =====================================================
 
   const clearSelection = bookingId => {
     const removeKey = setter => {
@@ -234,9 +224,7 @@ function AdminBookingRequests() {
     removeKey(setSelectedUnitIds);
   };
 
-  // =====================================================
   // EQUIPMENT GROUP HELPERS
-  // =====================================================
 
   const getGroup = (bookingId, equipmentId) =>
     (equipmentUnits[bookingId] || []).find(entry =>
@@ -264,9 +252,7 @@ function AdminBookingRequests() {
     );
   };
 
-  // =====================================================
   // CHECK AVAILABILITY
-  // =====================================================
 
   const checkAvailability = async (
     bookingId,
@@ -384,9 +370,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // CHANGE APPROVED QUANTITY
-  // =====================================================
 
   const changeAllocation = (
     bookingId,
@@ -412,9 +396,7 @@ function AdminBookingRequests() {
     }));
   };
 
-  // =====================================================
   // SELECT INDIVIDUAL EQUIPMENT IDS
-  // =====================================================
 
   const toggleUnit = (
     bookingId,
@@ -450,9 +432,7 @@ function AdminBookingRequests() {
     }));
   };
 
-  // =====================================================
   // VALIDATE SELECTED UNITS
-  // =====================================================
 
   const validateSelectedUnits = bookingId => {
     const result = availability[bookingId];
@@ -517,9 +497,7 @@ function AdminBookingRequests() {
       selectedUnitIds[bookingId] || {}
     ).flat();
 
-  // =====================================================
   // APPROVE / REJECT BOOKING
-  // =====================================================
 
   const handleDecision = async (
     bookingId,
@@ -651,9 +629,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // ASSIGN IDS TO OLDER APPROVED BOOKINGS
-  // =====================================================
 
   const handleAssignEquipmentIds = async bookingId => {
     if (!validateSelectedUnits(bookingId)) {
@@ -705,9 +681,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // ADMIN CANCELLATION
-  // =====================================================
 
   const handleAdminCancellation = async bookingId => {
     const booking = bookings.find(
@@ -769,9 +743,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // NEW: RETIRED EQUIPMENT HELPERS
-  // =====================================================
 
   const getAffectedUnits = booking => {
     if (booking.status !== 'Approved') {
@@ -808,9 +780,7 @@ function AdminBookingRequests() {
     });
   };
 
-  // =====================================================
   // LOAD ELIGIBLE REPLACEMENTS
-  // =====================================================
 
   const loadReplacementOptions = async (
     bookingId,
@@ -846,9 +816,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // CONFIRM MANUAL REASSIGNMENT
-  // =====================================================
 
   const handleReassignment = async (
     bookingId,
@@ -929,9 +897,7 @@ function AdminBookingRequests() {
     }
   };
 
-  // =====================================================
   // RENDER RETIRED EQUIPMENT WARNING
-  // =====================================================
 
   const renderRetiredEquipmentWarning = booking => {
     if (booking.status !== 'Approved') {
@@ -1151,9 +1117,7 @@ function AdminBookingRequests() {
     );
   };
 
-  // =====================================================
   // EQUIPMENT SELECTOR
-  // =====================================================
 
   const renderEquipmentSelector = (
     bookingId,
@@ -1429,9 +1393,7 @@ function AdminBookingRequests() {
     );
   };
 
-  // =====================================================
   // FILTER AND SORT
-  // =====================================================
 
   const filteredBookings = [...bookings]
     .filter(booking =>

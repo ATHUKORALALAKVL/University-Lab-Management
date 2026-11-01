@@ -998,20 +998,14 @@ function AdminEquipment() {
                         >
                           View IDs / Repairs
                         </button>
-
                         <button
                           type="button"
-                          style={{
-                            ...styles.button,
-                            backgroundColor: '#2563eb',
-                            color: '#fff',
-                            border: 'none'
-                          }}
+                          style={styles.button}
                           onClick={() => handleEdit(item)}
-                        >
-                          Edit
+>
+                           Edit
                         </button>
-
+        
                         <button
                           type="button"
                           onClick={() =>

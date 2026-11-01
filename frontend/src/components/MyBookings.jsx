@@ -3,9 +3,7 @@ import { useState, useEffect, useCallback } from 'react';
 
 const API_URL = 'https://university-lab-backend.vercel.app';
 
-// ======================================================
 // HELPERS
-// ======================================================
 
 const getId = value => {
   if (!value) return '';
@@ -71,9 +69,7 @@ const getStatusColor = status => {
   return '#b36b00';
 };
 
-// ======================================================
 // LABORATORY NAME RESOLUTION
-// ======================================================
 
 const getLabName = (
   item,
@@ -86,13 +82,11 @@ const getLabName = (
     return 'Laboratory not recorded';
   }
 
-  // Find the complete equipment record from catalogue.
   const equipmentRecord = equipmentList.find(record =>
     getId(record) === getId(equipment)
   );
 
-  // Prefer populated lab from booking.
-  // Otherwise use catalogue lab.
+  
   const lab =
     equipment?.lab ||
     equipmentRecord?.lab;
@@ -141,9 +135,7 @@ const groupEquipmentByLab = (
   );
 };
 
-// ======================================================
 // STYLES
-// ======================================================
 
 const timestampStyle = {
   fontSize: '12px',
@@ -173,9 +165,7 @@ const labelStyle = {
   fontSize: '13px'
 };
 
-// ======================================================
 // BOOKING TIMESTAMPS
-// ======================================================
 
 function BookingTimestamps({ booking }) {
   const requestedAt = formatDateTime(
@@ -343,9 +333,7 @@ function RequestedEquipment({
   );
 }
 
-// ======================================================
 // APPROVED EQUIPMENT DETAILS
-// ======================================================
 
 function ApprovedEquipmentDetails({
   booking,
@@ -353,8 +341,7 @@ function ApprovedEquipmentDetails({
   equipmentList,
   labs
 }) {
-  // Cancelled bookings must NOT display
-  // previously assigned equipment.
+
   if (booking.status === 'Cancelled') {
     return null;
   }
@@ -435,10 +422,7 @@ function ApprovedEquipmentDetails({
       matchingUnits
     };
   });
-
-  // Keep unmatched IDs separate rather than
-  // displaying them under the wrong equipment.
-  const unmatchedUnits = assignedUnits.filter(
+    const unmatchedUnits = assignedUnits.filter(
     unit => !usedUnitIds.has(getId(unit))
   );
 
@@ -550,9 +534,7 @@ function ApprovedEquipmentDetails({
   );
 }
 
-// ======================================================
 // MY BOOKINGS
-// ======================================================
 
 function MyBookings() {
   const [bookings, setBookings] = useState([]);
@@ -566,9 +548,7 @@ function MyBookings() {
   const [errorMessage, setErrorMessage] =
     useState('');
 
-  // ====================================================
   // LOAD BOOKINGS, EQUIPMENT AND LABORATORIES
-  // ====================================================
 
   const loadBookings = useCallback(async () => {
     try {
@@ -602,8 +582,6 @@ function MyBookings() {
   }, []);
 
   const loadEquipmentAndLabs = useCallback(async () => {
-    // These are read-only catalogue requests.
-    // They do not modify equipment or bookings.
 
     const [equipmentResult, labsResult] =
       await Promise.allSettled([
@@ -659,9 +637,7 @@ function MyBookings() {
     loadEquipmentAndLabs();
   }, [loadBookings, loadEquipmentAndLabs]);
 
-  // ====================================================
   // CANCEL BOOKING
-  // ====================================================
 
   const cancelBooking = async bookingId => {
     if (
@@ -726,9 +702,8 @@ function MyBookings() {
     }
   };
 
-  // ====================================================
+  
   // PAGE
-  // ====================================================
 
   return (
     <section className="laboratories-section">

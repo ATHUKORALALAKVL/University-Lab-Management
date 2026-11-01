@@ -41,7 +41,7 @@ function AdminStaffVerification() {
   // Approve instructor account
   const approveStaff = async (staffId) => {
     const confirmed = window.confirm(
-      'Are you sure you want to approve this instructor?'
+      'Are you sure you want to approve this staff member?'
     );
 
     if (!confirmed) return;
@@ -131,8 +131,29 @@ function AdminStaffVerification() {
       )}
 
       {!loading && !error && pendingStaff.map((staff) => (
-        <div className="my-booking-card" key={staff._id}>
-          <h3>{staff.name}</h3>
+       <div className="my-booking-card" key={staff._id}>
+
+  {/* Staff registration date */}
+  {staff.createdAt && (
+    <p
+      style={{
+        textAlign: 'right',
+        fontSize: '11px',
+        color: '#888',
+        margin: '0 0 8px 0'
+      }}
+    >
+      Registered: {new Date(staff.createdAt).toLocaleString('en-GB', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      })}
+    </p>
+  )}
+
+  <h3>{staff.name}</h3>
 
           <p>
             <strong>Email:</strong> {staff.email}
