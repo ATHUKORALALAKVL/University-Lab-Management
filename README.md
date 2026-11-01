@@ -80,9 +80,6 @@ Open a terminal and run:
 cd backend
 npm install
 
-### Step 3: Configure Environment Variables
-
-### Step 3: Configure Backend Environment Variables
 
 ### Step 3: Configure Backend Environment Variables
 
