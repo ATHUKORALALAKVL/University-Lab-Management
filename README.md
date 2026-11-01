@@ -69,17 +69,17 @@ Install the following software:
 - A MongoDB Atlas database connection
 
 ### Step 1: Clone the Repository
-...........................................................................
+
 git clone https://github.com/ATHUKORALALAKVL/University-Lab-Management.git
 cd University-Lab-Management
-...........................................................................
+
 ### Step 2: Install Backend Dependencies
 
 Open a terminal and run:
-............
+
 cd backend
 npm install
-............
+
 ### Step 3: Configure Environment Variables
 
 ### Step 3: Configure Backend Environment Variables
@@ -88,19 +88,19 @@ npm install
 
 Create a .env file inside the backend folder and configure the following variables:
 
-.........
+
 MONGO_URI=your_mongodb_atlas_connection_string
 JWT_SECRET=your_secure_random_secret_key
 PORT=5000
 FRONTEND_URL=http://localhost:5173
-.......
+
 
 **Environment Variable Descriptions**
 
 
 MONGO_URI-Connects the backend to MongoDB Atlas. 
-JWT_SECRET` -Signs authentication tokens used for secure login. 
-PORT` - Specifies the backend server port. 
+JWT_SECRET -Signs authentication tokens used for secure login. 
+PORT - Specifies the backend server port. 
 FRONTEND_URL - Specifies the frontend address allowed by the backend's CORS configuration. 
 
 The port 5000 is an example and should be adjusted to match the backend configuration.
@@ -110,24 +110,23 @@ The port 5000 is an example and should be adjusted to match the backend configur
 
 From the backend folder, run the development or start script defined in `backend/package.json`.
 For example, if the backend has a development script:
-......
+
 npm run dev
-..........
+
 
 ### Step 5: Install Frontend Dependencies
 
 Open another terminal:
 
-........
 cd frontend
 npm install
-...........
+
 
 ### Step 6: Start the Frontend
 
-.........
+
 npm run dev
-..........
+
 
 Open the local address displayed in the terminal, normally:
 
