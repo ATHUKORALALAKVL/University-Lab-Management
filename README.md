@@ -46,7 +46,7 @@ Technologies Used
 
 The following demo accounts are provided for lecturers to test the University Laboratory Booking & Equipment Management System.
 
- User Type             Email                                  Password 
+ User Type           ,  Email  and                                Password is given
 
  Administrator      `labadminuor@gmail.com`                  `12345678` 
  Staff / Instructor `chandanaedirisingheuor@gmail.com`       `12345678` 
