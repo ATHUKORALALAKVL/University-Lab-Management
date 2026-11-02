@@ -12,7 +12,6 @@ Student
 - View laboratory details, facilities, and booking schedules.
 - Request the Undergraduate Project Laboratory.
 - Select equipment and required quantities during laboratory booking.
-- Submit equipment-only requests.
 - View booking status and request history.
 
  Staff / Instructor
@@ -53,21 +52,6 @@ The following demo accounts are provided for lecturers to test the University La
  Student            `eg20258754uor@gmail.com`                `12345678` 
 
 Login: https://university-lab-management.vercel.app
-
-## Project Structure
-
-University-Lab-Management/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   └── data/
-│   └── package.json
-├── backend/
-│   └── package.json
-├── .gitignore
-└── README.md
-
-The frontend contains the React user interface, while the backend handles API requests, authentication, database operations, and application logic.
 
 ## Installation and Setup
 
@@ -158,22 +142,6 @@ The main database collections are:
 
 Relationships between these records support booking management, equipment tracking, and availability checking.
 
-## Booking and Approval Process
-
-1. A student or staff member submits a laboratory booking or equipment request.
-2. The request is stored with Pending status.
-3. The administrator reviews pending requests in submission order.
-4. The system checks laboratory time conflicts and equipment availability.
-5. The administrator approves or rejects the request.
-6. The user can view the updated request status.
-
-Laboratory and equipment selections submitted together are processed as one request.
-
-## Equipment Management
-
-Each physical equipment unit can be identified using a unique ID, such as `OSC-001`.
-This supports tracking of individual equipment units, repair periods, and retirement. Units that are under repair or permanently retired are excluded from usable inventory as appropriate.
-
 ## Deployment
 
 **Live Application:**
@@ -192,10 +160,10 @@ https://github.com/ATHUKORALALAKVL/University-Lab-Management
 
 The main testing areas include:
 
-- Laboratory CRUD operations
+- Equipment and laboratory CRUD operations
 - Equipment inventory management
 - User registration and login
-- Laboratory and equipment booking requests
+- Laboratory and equipment booking  requests
 - Booking approval and rejection
 - Laboratory conflict detection
 - Equipment quantity validation
