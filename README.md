@@ -176,6 +176,18 @@ https://university-lab-backend.vercel.app
 
 https://github.com/ATHUKORALALAKVL/University-Lab-Management
 
+### Demo Login Credentials
+
+The following demo accounts are provided for lecturers to test the University Laboratory Booking & Equipment Management System.
+
+ User Type             Email                                  Password 
+
+ Administrator      `labadminuor@gmail.com`                  `12345678` 
+ Staff / Instructor `chandanaedirisingheuor@example.com`     `12345678` 
+ Student            `eg20258754uor@gmail.com`                `12345678` 
+
+Login: https://university-lab-management.vercel.app
+
 ## Testing
 
 The main testing areas include:
