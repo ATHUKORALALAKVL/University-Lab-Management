@@ -31,7 +31,7 @@ Student
 - Manage equipment repairs and retirement.
 - Manage registered users and access reports.
 
-Technologies Used
+ ## Technologies Used
 
  Frontend - React, Vite, JavaScript 
  Backend - Node.js, Express.js 
@@ -41,7 +41,7 @@ Technologies Used
  Version Control - Git and GitHub 
  Deployment - Vercel 
 
- ### Demo Login Credentials
+ ## Demo Login Credentials
 
 The following demo accounts are provided for lecturers to test the University Laboratory Booking & Equipment Management System.
 
