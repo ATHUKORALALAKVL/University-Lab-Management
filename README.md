@@ -48,8 +48,8 @@ The following demo accounts are provided for lecturers to test the University La
 
  User Type           ,  Email  and                                Password is given
 
- Administrator      `labadminuor@gmail.com`                  `12345678` 
- Staff / Instructor `chandanaedirisingheuor@gmail.com`       `12345678` 
+ Administrator      `labadminuor@gmail.com`                  `12345678` ,
+ Staff / Instructor `chandanaedirisingheuor@gmail.com`       `12345678` ,
  Student            `eg20258754uor@gmail.com`                `12345678` 
 
 Login: https://university-lab-management.vercel.app
