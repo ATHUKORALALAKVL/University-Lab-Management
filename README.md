@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The University Laboratory Booking & Equipment Management System is a full-stack web application developed for the Department of Electrical and Information Engineering, University of Ruhuna, as part of the EC4307 Web Application Development mini project.
+The University Laboratory Booking & Equipment Management System is a full-stack web application developed for the Department of Electrical and Information Engineering, University of Ruhuna, as part of the Web Application Development mini project.
 The system provides a centralized platform for managing university laboratories, equipment inventory, and booking requests. Students and staff can request laboratory facilities and equipment, while administrators manage resources, review requests, and monitor availability.
 
 ## Main Features
@@ -59,7 +59,7 @@ The frontend contains the React user interface, while the backend handles API re
 
 ## Installation and Setup
 
-### Prerequisites
+### Requirements
 
 Install the following software:
 
@@ -183,7 +183,7 @@ The following demo accounts are provided for lecturers to test the University La
  User Type             Email                                  Password 
 
  Administrator      `labadminuor@gmail.com`                  `12345678` 
- Staff / Instructor `chandanaedirisingheuor@example.com`     `12345678` 
+ Staff / Instructor `chandanaedirisingheuor@gmail.com`       `12345678` 
  Student            `eg20258754uor@gmail.com`                `12345678` 
 
 Login: https://university-lab-management.vercel.app
